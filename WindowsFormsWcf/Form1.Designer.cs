@@ -37,7 +37,10 @@
             this.txtAge = new System.Windows.Forms.TextBox();
             this.txtId = new System.Windows.Forms.TextBox();
             this.btnDelete = new System.Windows.Forms.Button();
-            this.btnAll = new System.Windows.Forms.Button();
+            this.btnSelect = new System.Windows.Forms.Button();
+            this.dgvUsers = new System.Windows.Forms.DataGridView();
+            this.btnSelectAll = new System.Windows.Forms.Button();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvUsers)).BeginInit();
             this.SuspendLayout();
             // 
             // btnInsert
@@ -48,6 +51,7 @@
             this.btnInsert.TabIndex = 0;
             this.btnInsert.Text = "Insert";
             this.btnInsert.UseVisualStyleBackColor = true;
+            this.btnInsert.Click += new System.EventHandler(this.btnInsert_Click);
             // 
             // btnUpdate
             // 
@@ -57,6 +61,7 @@
             this.btnUpdate.TabIndex = 1;
             this.btnUpdate.Text = "Update";
             this.btnUpdate.UseVisualStyleBackColor = true;
+            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
             // 
             // label1
             // 
@@ -66,7 +71,6 @@
             this.label1.Size = new System.Drawing.Size(16, 13);
             this.label1.TabIndex = 3;
             this.label1.Text = "Id";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // label2
             // 
@@ -85,7 +89,6 @@
             this.label3.Size = new System.Drawing.Size(26, 13);
             this.label3.TabIndex = 3;
             this.label3.Text = "Age";
-            this.label3.Click += new System.EventHandler(this.label3_Click);
             // 
             // txtName
             // 
@@ -116,21 +119,42 @@
             this.btnDelete.TabIndex = 1;
             this.btnDelete.Text = "Delete";
             this.btnDelete.UseVisualStyleBackColor = true;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
-            // btnAll
+            // btnSelect
             // 
-            this.btnAll.Location = new System.Drawing.Point(47, 95);
-            this.btnAll.Name = "btnAll";
-            this.btnAll.Size = new System.Drawing.Size(266, 23);
-            this.btnAll.TabIndex = 0;
-            this.btnAll.Text = "All Users";
-            this.btnAll.UseVisualStyleBackColor = true;
+            this.btnSelect.Location = new System.Drawing.Point(47, 95);
+            this.btnSelect.Name = "btnSelect";
+            this.btnSelect.Size = new System.Drawing.Size(118, 23);
+            this.btnSelect.TabIndex = 0;
+            this.btnSelect.Text = "Select";
+            this.btnSelect.UseVisualStyleBackColor = true;
+            this.btnSelect.Click += new System.EventHandler(this.btnSelect_Click);
+            // 
+            // dgvUsers
+            // 
+            this.dgvUsers.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvUsers.Location = new System.Drawing.Point(18, 124);
+            this.dgvUsers.Name = "dgvUsers";
+            this.dgvUsers.Size = new System.Drawing.Size(324, 119);
+            this.dgvUsers.TabIndex = 5;
+            // 
+            // btnSelectAll
+            // 
+            this.btnSelectAll.Location = new System.Drawing.Point(206, 95);
+            this.btnSelectAll.Name = "btnSelectAll";
+            this.btnSelectAll.Size = new System.Drawing.Size(118, 23);
+            this.btnSelectAll.TabIndex = 0;
+            this.btnSelectAll.Text = "Select All";
+            this.btnSelectAll.UseVisualStyleBackColor = true;
+            this.btnSelectAll.Click += new System.EventHandler(this.btnSelectAll_Click);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(362, 391);
+            this.ClientSize = new System.Drawing.Size(362, 266);
+            this.Controls.Add(this.dgvUsers);
             this.Controls.Add(this.txtAge);
             this.Controls.Add(this.txtId);
             this.Controls.Add(this.txtName);
@@ -139,10 +163,12 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnDelete);
             this.Controls.Add(this.btnUpdate);
-            this.Controls.Add(this.btnAll);
+            this.Controls.Add(this.btnSelectAll);
+            this.Controls.Add(this.btnSelect);
             this.Controls.Add(this.btnInsert);
             this.Name = "Form1";
             this.Text = "Users";
+            ((System.ComponentModel.ISupportInitialize)(this.dgvUsers)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -159,7 +185,9 @@
         private System.Windows.Forms.TextBox txtAge;
         private System.Windows.Forms.TextBox txtId;
         private System.Windows.Forms.Button btnDelete;
-        private System.Windows.Forms.Button btnAll;
+        private System.Windows.Forms.Button btnSelect;
+        private System.Windows.Forms.DataGridView dgvUsers;
+        private System.Windows.Forms.Button btnSelectAll;
     }
 }
 

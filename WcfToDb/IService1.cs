@@ -19,6 +19,18 @@ namespace WcfToDb
 
         [OperationContract]
         int InsertUser(User u);
+
+        [OperationContract]
+        int UpdateUser(User u);
+
+        [OperationContract]
+        int DeleteUser(User u);
+
+        [OperationContract]
+        User GetUser(User u);
+
+        [OperationContract]
+        List<User> GetAllUsers();
         // TODO: Add your service operations here
     }
 
